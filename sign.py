@@ -6,8 +6,17 @@ from hashlib import sha256
 
 def sign(m):
     #generate public key
-    public_key = point()
+    curve = ecdsa.secp256k1()
+    print(curve.gen_keypair())
+    
+    public_key = secp256k1.gen_keypair.point()
+    
     #generate signature
     r = 0
     s = 0
     return( public_key, [r,s] )
+
+
+# The python interpreter actually executes the function body here
+# print("Answer: ")
+# keys = keygen()
