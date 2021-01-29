@@ -7,6 +7,7 @@ from hashlib import sha256
 def sign(m):
     #generate public key
     public_key=0
+    print("Hello")
     #generate signature
     r = 0
     s = 0
