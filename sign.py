@@ -8,6 +8,7 @@ def sign(m):
     #generate public key
     G = secp256k1.gen_keypair
     print(G)
+    print("hello test")
     public_key=0
     #generate signature
     r = 0
