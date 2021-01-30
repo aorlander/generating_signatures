@@ -12,6 +12,8 @@ def sign(m):
     gen_keypair(curve=ecdsa.SECP256k1)
     private_key = gen_private_key(curve)
     public_key = get_public_key(private_key, curve)
+    print("public key:")
+    print(public_key)
     #generate signature
     r = 0
     s = 0
