@@ -4,12 +4,14 @@ from fastecdsa.keys import export_key, gen_keypair
 from fastecdsa import curve, ecdsa, keys
 from hashlib import sha256
 
+# The high level verify algorithm is to take your public key, message, 
+# and signature and ensure that the output of sign_pk(msg) = signature
+
 def sign(m):
     #generate public key
-    G = secp256k1.gen_keypair
-    print(G)
-    print("hello test")
-    public_key=0
+    gen_keypair(curve=ecdsa.SECP256k1)
+    private_key = gen_private_key(curve)
+    public_key = get_public_key(private_key, curve)
     #generate signature
     r = 0
     s = 0
