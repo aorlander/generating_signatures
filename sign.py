@@ -6,6 +6,8 @@ from hashlib import sha256
 
 def sign(m):
     #generate public key
+    G = secp256k1.gen_keypair
+    print(G)
     public_key=0
     #generate signature
     r = 0
