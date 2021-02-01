@@ -9,15 +9,11 @@ from hashlib import sha256
 
 def sign(m):
     #generate public key
-    gen_keypair(curve=ecdsa.SECP256k1)
-    private_key = gen_private_key(curve)
-    #public_key = get_public_key(private_key, curve)
-    public_key=1
-    print("public key:")
-    print(public_key)
+    str_m = str(m)
+    byte_m = str_m.encode('utf-8')
+    private_key, public_key = keys.gen_keypair(curve.secp256k1) 
     #generate signature
-    r = 0
-    s = 0
+    r, s = ecdsa.sign(byte_m, private_key, curve.secp256k1, sha256)
     return( public_key, [r,s] )
 
 
